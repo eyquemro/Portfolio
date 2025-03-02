@@ -50,7 +50,28 @@ npm run dev
 
 ## Déploiement
 
-Le site est configuré pour être déployé sur Vercel. Chaque push sur la branche main déclenche automatiquement un déploiement.
+Le site est configuré pour être déployé sur Vercel. Voici les étapes post-déploiement :
+
+1. **Configuration du Projet Vercel**
+   - Importez le projet depuis GitHub
+   - Configurez les variables d'environnement dans Settings > Environment Variables :
+     ```
+     VITE_ROOTME_API_KEY=votre_clé_api
+     ```
+
+2. **Configuration du Domaine**
+   - Utilisez le domaine Vercel par défaut ou
+   - Ajoutez votre domaine personnalisé dans Settings > Domains
+
+3. **Déploiements Automatiques**
+   - Les pushes sur la branche main déclenchent automatiquement un déploiement
+   - Les Pull Requests créent des environnements de preview
+   - Surveillez les déploiements dans le dashboard Vercel
+
+4. **Monitoring**
+   - Activez Production Monitoring dans les paramètres
+   - Consultez les analytics de performance
+   - Vérifiez les logs en cas d'erreur
 
 ## Contact
 
