@@ -9,6 +9,7 @@ import { Contact } from './components/sections/Contact'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Gestion du scroll et de la section active
   useEffect(() => {
@@ -31,6 +32,13 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const navigationItems = [
+    { id: 'competences', label: 'Compétences' },
+    { id: 'experience', label: 'Expérience' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'contact', label: 'Contact' }
+  ]
+
   return (
     <div className="relative">
       {/* Navigation fixe */}
@@ -40,13 +48,10 @@ export default function App() {
             <a href="#hero" className="text-xl font-bold cyber-text">
               RE
             </a>
+            
+            {/* Navigation desktop */}
             <div className="hidden md:flex items-center space-x-8">
-              {[
-                { id: 'competences', label: 'Compétences' },
-                { id: 'experience', label: 'Expérience' },
-                { id: 'certifications', label: 'Certifications' },
-                { id: 'contact', label: 'Contact' }
-              ].map(item => (
+              {navigationItems.map(item => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
@@ -58,7 +63,50 @@ export default function App() {
                 </a>
               ))}
             </div>
+
+            {/* Bouton menu mobile */}
+            <button
+              className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {/* Menu mobile */}
+          {isMenuOpen && (
+            <div className="md:hidden py-4 border-t border-border/50">
+              <div className="flex flex-col space-y-4">
+                {navigationItems.map(item => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`text-sm transition-colors hover:text-primary px-4 py-2 ${
+                      activeSection === item.id ? 'text-primary bg-muted/30' : 'text-muted-foreground'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
