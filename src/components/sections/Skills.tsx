@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaCode, FaServer, FaMagnifyingGlass, FaLock, FaBug, FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
+import { FaCode, FaServer,  FaLock, FaBug, FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
 import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic, SiGraylog } from 'react-icons/si'
 
 const skillCategories = [
