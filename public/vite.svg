@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond du logo -->
+  <circle cx="128" cy="128" r="128" fill="#2B4C7E"/>
+  
+  <!-- Chaîne stylisée -->
+  <path d="M76 128 h104" stroke="#FFF" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Blocs représentant la blockchain -->
+  <rect x="56" y="108" width="40" height="40" rx="8" fill="#88A0BF"/>
+  <rect x="160" y="108" width="40" height="40" rx="8" fill="#88A0BF"/>
+  
+  <!-- Symbole de connexion -->
+  <circle cx="128" cy="128" r="16" fill="#FFD700"/>
+  
+  <!-- Éléments décoratifs -->
+  <path d="M88 98 L168 98" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+  <path d="M88 158 L168 158" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased leading-relaxed min-h-screen;
+    background-image: 
+      radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.1), transparent 50%),
+      radial-gradient(circle at 0% 100%, hsl(var(--accent) / 0.1), transparent 50%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl mb-4;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-3;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl mb-2;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-muted-foreground;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-center mb-12 text-gradient;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+
+  .cyber-card {
+    @apply p-6 rounded-lg border border-border/50 bg-secondary/30 backdrop-blur-sm;
+  }
+
+  .tag {
+    @apply px-3 py-1 text-xs rounded-full bg-muted text-muted-foreground;
+  }
+
+  .cyber-button {
+    @apply px-4 py-2 rounded border border-primary/50 bg-secondary/30 text-primary hover:bg-primary/20 transition-colors;
+  }
+
+  .cyber-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .cyber-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .cyber-text {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply font-bold;
+  }
+
+  .cyber-grid-bg {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, 
+      hsl(var(--primary) / 0.15) 0%,
+      hsl(var(--background)) 70%);
+  }
+
+  section {
+    @apply min-h-screen flex flex-col justify-center relative py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-background/30 backdrop-blur-lg border border-border/50;
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Scrollbar personnalisé */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+  }
+
+  /* Sélection de texte */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+}
+
+/* Ajustements pour les sections */
+#competences, #projets, #experience, #contact {
+  @apply scroll-mt-20;
+}
+
+/* Ajustements pour le formulaire */
+input, textarea {
+  @apply bg-muted/30 border-muted-foreground/10 rounded-md px-4 py-2 text-sm focus:ring-1 focus:ring-primary/50 focus:border-primary/50 transition-all;
+}
+
+/* Ajustements pour les tags */
+.tag {
+  @apply px-2.5 py-1 text-xs font-medium bg-muted/30 rounded-md border border-muted-foreground/10 text-muted-foreground;
+}
+
+/* Animation de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Ajustements pour le responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  section {
+    @apply py-12;
+  }
+  
+  .container {
+    @apply px-6;
+  }
+  
+  .cyber-card {
+    @apply p-4;
+  }
+}
