@@ -18,10 +18,7 @@ export function RootMeStats({ username }: RootMeStatsProps) {
   useEffect(() => {
     const fetchRootMeStats = async () => {
       try {
-        // En production, utilise l'API Route de Vercel
-        const apiUrl = import.meta.env.PROD
-          ? 'https://api.www.root-me.org/auteurs/886940'
-          : '/api/rootme/auteurs/886940'
+        const apiUrl = '/api/rootme'
 
         const response = await fetch(apiUrl, {
           method: 'GET',
