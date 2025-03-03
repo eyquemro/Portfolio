@@ -18,11 +18,13 @@ export function RootMeStats({ username }: RootMeStatsProps) {
   useEffect(() => {
     const fetchRootMeStats = async () => {
       try {
-        const response = await fetch(`https://api.www.root-me.org/auteurs/${username}`, {
-          credentials: 'omit',
+        const response = await fetch(`/api/rootme/auteurs/886940`, {
+          method: 'GET',
+          credentials: 'include',
           headers: {
             'Accept': 'application/json',
-            'Cookie': `api_key=${import.meta.env.VITE_ROOTME_API_KEY}`
+            'Content-Type': 'application/json',
+            'Cookie': 'api_key=886940_47052075a26422c0148aaa882b31974eb708ecad220b6347862430655ee94e3f'
           }
         })
 
@@ -37,7 +39,7 @@ export function RootMeStats({ username }: RootMeStatsProps) {
         setData({
           score: data.score,
           position: data.position,
-          challenges_validates: data.challenges?.length || 0
+          challenges_validates: data.validations?.length || 0
         })
       } catch (err) {
         setError('Erreur de connexion à l\'API Root-Me')

@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 214 100% 65%;
+  --primary: 214 100% 97%;
+  --primary-foreground: 214 100% 65%;
+  --secondary: 214 100% 65%;
+  --secondary-foreground: 214 100% 97%;
+  --muted: 214 100% 97%;
+  --muted-foreground: 214 100% 65%;
+  --accent: 214 100% 90%;
+  --accent-foreground: 214 100% 65%;
+  --border: 214 100% 90%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  
+  /* Style de base commun pour tous les éléments interactifs */
+  .interactive-element {
+    @apply transition-all duration-300
+           hover:-translate-y-1 hover:shadow-lg
+           hover:bg-accent/50;
+  }
+  
+  .card {
+    @apply bg-box-bg rounded-lg shadow-md p-6 border-2 border-box-border 
+           hover:border-box-hover interactive-element;
+  }
+  
+  .button-primary {
+    @apply bg-gradient-primary from-gradient-start to-gradient-end text-secondary px-6 py-2 rounded-md 
+           hover:opacity-90 font-medium shadow-sm interactive-element;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-secondary mb-8 text-center;
+  }
+
+  .nav-link {
+    @apply text-secondary hover:text-accent-hover font-medium interactive-element;
+  }
+
+  .skill-tag {
+    @apply bg-box-bg text-secondary px-4 py-2 rounded-full text-sm border-2 border-box-border 
+           font-medium interactive-element;
+  }
+
+  .project-card {
+    @apply bg-box-bg rounded-lg shadow-md border-2 border-box-border overflow-hidden 
+           interactive-element;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    @apply bg-box-bg border-2 border-box-border rounded-md px-4 py-2 
+           focus:outline-none focus:ring-1 focus:ring-box-hover focus:border-box-hover 
+           text-secondary interactive-element;
+  }
+
+  .social-link {
+    @apply text-secondary hover:text-accent-hover font-medium interactive-element;
+  }
+
+  .cyber-card {
+    @apply bg-box-bg rounded-lg p-6 border-2 border-box-border 
+           hover:border-box-hover interactive-element;
+  }
+
+  .cyber-card .text-muted-foreground {
+    @apply text-secondary/80;
+  }
+
+  .cyber-card a {
+    @apply text-secondary hover:text-box-hover interactive-element;
+  }
+
+  .cyber-card svg {
+    @apply text-box-border group-hover:text-box-hover interactive-element;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-primary from-gradient-start to-gradient-end bg-clip-text text-transparent;
+  }
+
+  .education-card {
+    @apply bg-box-bg rounded-lg p-6 border-2 border-box-border 
+           hover:border-box-hover interactive-element;
+  }
+
+  .education-card h4 {
+    @apply text-secondary;
+  }
+
+  .education-card a {
+    @apply text-secondary hover:text-box-hover interactive-element;
+  }
+
+  .education-card .text-muted-foreground {
+    @apply text-secondary/80;
+  }
+
+  .tag {
+    @apply px-3 py-1 text-xs rounded-full bg-box-bg text-secondary border-2 border-box-border
+           interactive-element;
+  }
+
+  /* Styles pour les certifications */
+  .certification-card {
+    @apply bg-box-bg rounded-lg p-6 border-2 border-box-border 
+           hover:border-box-hover interactive-element;
+  }
+
+  .certification-card h4 {
+    @apply text-secondary;
+  }
+
+  .certification-card a {
+    @apply text-secondary hover:text-box-hover interactive-element;
+  }
+
+  .certification-card .text-muted-foreground {
+    @apply text-secondary/80;
+  }
+
+  .certification-card svg {
+    @apply text-box-border group-hover:text-box-hover interactive-element;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+} 

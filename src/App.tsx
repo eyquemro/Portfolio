@@ -32,6 +32,15 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Fonction pour le défilement fluide
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   const navigationItems = [
     { id: 'competences', label: 'Compétences' },
     { id: 'experience', label: 'Expérience' },
@@ -45,7 +54,7 @@ export default function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
         <div className="container">
           <div className="flex items-center justify-between h-16">
-            <a href="#hero" className="text-xl font-bold cyber-text">
+            <a href="#hero" onClick={scrollToTop} className="text-xl font-bold cyber-text interactive-element">
               RE
             </a>
             
