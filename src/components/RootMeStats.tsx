@@ -18,13 +18,16 @@ export function RootMeStats({ username }: RootMeStatsProps) {
   useEffect(() => {
     const fetchRootMeStats = async () => {
       try {
-        const response = await fetch(`/api/rootme/auteurs/886940`, {
+        // En production, utilise l'API Route de Vercel
+        const apiUrl = process.env.NODE_ENV === 'production' 
+          ? '/api/rootme'
+          : '/api/rootme/auteurs/886940'
+
+        const response = await fetch(apiUrl, {
           method: 'GET',
-          credentials: 'include',
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Cookie': 'api_key=886940_47052075a26422c0148aaa882b31974eb708ecad220b6347862430655ee94e3f'
+            'Content-Type': 'application/json'
           }
         })
 
