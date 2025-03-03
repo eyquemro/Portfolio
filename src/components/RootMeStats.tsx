@@ -19,7 +19,7 @@ export function RootMeStats({ username }: RootMeStatsProps) {
     const fetchRootMeStats = async () => {
       try {
         // En production, utilise l'API Route de Vercel
-        const apiUrl = process.env.NODE_ENV === 'production' 
+        const apiUrl = import.meta.env.PROD
           ? '/api/rootme'
           : '/api/rootme/auteurs/886940'
 
