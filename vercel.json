@@ -3,17 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "builds": [
-    {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/rootme",
-      "destination": "/api/rootme"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

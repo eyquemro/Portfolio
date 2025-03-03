@@ -20,14 +20,15 @@ export function RootMeStats({ username }: RootMeStatsProps) {
       try {
         // En production, utilise l'API Route de Vercel
         const apiUrl = import.meta.env.PROD
-          ? '/api/rootme'
+          ? 'https://api.www.root-me.org/auteurs/886940'
           : '/api/rootme/auteurs/886940'
 
         const response = await fetch(apiUrl, {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Cookie': 'api_key=886940_47052075a26422c0148aaa882b31974eb708ecad220b6347862430655ee94e3f'
           }
         })
 
