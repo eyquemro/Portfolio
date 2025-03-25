@@ -7,7 +7,7 @@ const skillCategories = [
     title: "Cybersécurité Défensive",
     description: "SOC & Blue Team",
     skills: [
-      { name: "Wazuh EDR", icon: FaShieldHalved },
+      { name: "Wazuh", icon: FaShieldHalved },
       { name: "QRadar SIEM", icon: FaChartLine },
       { name: "TheHive", icon: FaDiamond },
       { name: "Splunk", icon: SiSplunk },
