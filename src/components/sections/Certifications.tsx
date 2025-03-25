@@ -101,7 +101,7 @@ export function Certifications() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Plateformes d'Apprentissage
+              Plateformes Cyber
             </motion.h3>
 
             <div className="grid md:grid-cols-2 gap-6">
