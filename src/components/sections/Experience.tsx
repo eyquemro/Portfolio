@@ -42,15 +42,18 @@ const workExperiences: Experience[] = [
   {
     type: 'work',
     icon: FaBriefcase,
-    title: "Cyber Security Engineer",
+    title: "RSSI - Responsable de la Sécurité des Systèmes d'Information",
     organization: "Voltaire Group",
     period: "sept. 2024 - aujourd'hui",
     location: "Bidart, Nouvelle-Aquitaine",
     tasks: [
       "Élaboration et mise en œuvre de la cartographie complète du système d'information",
       "Pilotage de la mise en conformité RGPD et renforcement de la protection des données",
-      "Animation de sessions de sensibilisation cyber innovantes et interactives",
-      "Conception de plans de continuité d'activité face aux cybermenaces émergentes"
+      "Conception de plans de continuité d'activité",
+      "Déploiement d'une campagne de phishing Gophish",
+      "Déploiement et configuration d'un SIEM Wazuh",
+      "Mise en place d'une politique de sécurité des systèmes d'information"
+
     ],
     tags: ["Cybersécurité", "RGPD", "Risk Management", "Gouvernance", "Infrastructure Cloud", "Campagne de phishing", " Déploiement SIEM Wazuh"]
   },
