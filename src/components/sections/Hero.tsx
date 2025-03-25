@@ -49,7 +49,7 @@ export function Hero() {
                 <span>Root-Me</span>
               </a>
               <a
-                href="https://tryhackme.com/p/eyqueumro"
+                href="https://tryhackme.com/p/eyquemro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cyber-button"
