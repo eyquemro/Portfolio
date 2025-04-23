@@ -10,14 +10,6 @@ const certifications = [
     status: "En cours",
     description: "Certification internationale reconnue en ethical hacking et tests d'intrusion.",
     icon: FaShieldHalved
-  },
-  {
-    name: "CISSP",
-    title: "Certified Information Systems Security Professional",
-    organization: "ISC²",
-    status: "En cours",
-    description: "Standard international en gestion de la sécurité des systèmes d'information.",
-    icon: FaCertificate
   }
 ]
 

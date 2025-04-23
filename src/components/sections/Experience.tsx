@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaBriefcase } from 'react-icons/fa6'
+import { FaGraduationCap, FaBriefcase, FaCalendarCheck } from 'react-icons/fa6'
 import { IconType } from 'react-icons'
 
 interface Experience {
-  type: 'education' | 'work';
+  type: 'education' | 'work' | 'event';
   icon: IconType;
   title: string;
   organization: string;
@@ -24,7 +24,7 @@ const educationExperiences: Experience[] = [
     organizationLink: "https://www.utt.fr/formations/mastere-specialise/expert-en-cybersecurite",
     period: "2023 - 2024",
     description: "Formation spécialisée en investigation numérique et réponse aux incidents de sécurité. Expertise en analyse forensique, threat hunting, et gestion des incidents de sécurité. Programme accrédité par la CGE avec un taux d'insertion de 100% à 6 mois.",
-    tags: ["Digital Forensics", "Incident Response", "Threat Hunting", "Malware Analysis", "SIEM", "Pentest"]
+    tags: ["Digital Forensics", "Incident Response", "Threat Hunting", "Malware Analysis", "OSINT", "Pentest"]
   },
   {
     type: 'education',
@@ -86,6 +86,21 @@ const workExperiences: Experience[] = [
     tags: ["C#", "SQL", "Gestion de Projet"]
   }
 ]
+
+const eventExperience: Experience[] = [
+  {
+    type: 'event',
+    icon: FaCalendarCheck,
+    title: "Participation au FIC 2025",
+    organization: "Forum International de la Cybersécurité",
+    organizationLink: "https://www.forum-fic.com",
+    period: "Avril 2025",
+    description: "Rencontres avec les principaux acteurs du domaine de la cybersécurité. Participation à des conférences spécialisées, dont celles sur l’OSINT et la conférence CorINN sur l'investigation numérique.",
+    tags: ["FIC 2025", "OSINT", "Cybersecurity Events", "Conférences", "Investigation Numérique"]
+  },
+  // autres expériences...
+];
+
 
 function ExperienceTimeline({ experiences, title }: { experiences: Experience[], title: string }) {
   return (
