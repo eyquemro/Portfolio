@@ -87,7 +87,7 @@ const workExperiences: Experience[] = [
   }
 ]
 
-const eventExperience: Experience[] = [
+const eventExperiences: Experience[] = [
   {
     type: 'event',
     icon: FaCalendarCheck,
@@ -196,6 +196,10 @@ export function Experience() {
           <ExperienceTimeline 
             title="Parcours Académique" 
             experiences={educationExperiences} 
+          />
+          <ExperienceTimeline 
+            title="Evènements" 
+            experiences={eventExperiences} 
           />
         </div>
       </div>

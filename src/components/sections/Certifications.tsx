@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaAward, FaShieldHalved, FaCertificate } from 'react-icons/fa6'
+import { FaAward, FaShieldHalved } from 'react-icons/fa6'
 import { RootMeStats } from '../RootMeStats'
 
 const certifications = [
