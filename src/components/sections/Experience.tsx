@@ -65,11 +65,11 @@ const workExperiences: Experience[] = [
     period: "mars 2024 - sept. 2024",
     location: "Pessac, Nouvelle-Aquitaine",
     tasks: [
-      "Conception et implémentation de solutions cloud natives sur AWS",
-      "Administration avancée des services AWS (EC2, S3, Lambda)",
-      "Optimisation des performances et de la sécurité des applications cloud"
+      "Conception et développement de solutions cloud natives sécurisées sur AWS (EC2, S3, Lambda).",
+      "Administration avancée des services AWS avec mise en œuvre de bonnes pratiques de sécurité et d’optimisation.",
+      "Automatisation des processus DevSecOps pour améliorer la sécurité et la performance des applications cloud."
     ],
-    tags: ["AWS", "Cloud", "DevOps", "Java"]
+    tags: ["AWS", "Cloud", "DevSecOps", "Sécurité"]
   },
   {
     type: 'work',
@@ -79,12 +79,12 @@ const workExperiences: Experience[] = [
     period: "sept. 2020 - sept. 2023",
     location: "Fontenay-sous-Bois, Île-de-France",
     tasks: [
-      "Direction de projets innovants dans le domaine des flux financiers",
-      "Développement full-stack en C# et SQL avec focus sur l'expérience utilisateur",
-      "Mise en place de processus de qualité : tests unitaires et intégration continue"
+      "Pilotage de projets sur les flux financiers avec un focus sur la sécurité applicative.",
+      "Développement C# / SQL avec intégration de contrôles de sécurité (validation, gestion des accès).",
+      "Mise en place de tests unitaires et d’intégration pour assurer la qualité et la sécurité des livrables."
     ],
-    tags: ["C#", "SQL", "Gestion de Projet"]
-  }
+    tags: ["C#", "SQL", "Sécurité Applicative", "Tests"]
+  }  
 ]
 
 const eventExperiences: Experience[] = [
