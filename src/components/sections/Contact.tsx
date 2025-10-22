@@ -174,7 +174,7 @@ export function Contact() {
           </p>
           <div className="flex justify-center gap-4">
             <a 
-              href="https://www.linkedin.com/in/romain-eyquem"
+              href="https:/www.linkedin.com/in/romain-e-52816b1a3"
               target="_blank"
               rel="noopener noreferrer"
               className="cyber-button p-2"

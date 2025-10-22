@@ -31,7 +31,7 @@ export function Hero() {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/romain-eyquem-52816b1a3/"
+                href="https://www.linkedin.com/in/romain-e-52816b1a3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cyber-button"
