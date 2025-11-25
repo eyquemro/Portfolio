@@ -42,7 +42,7 @@ const workExperiences: Experience[] = [
   {
     type: 'work',
     icon: FaBriefcase,
-    title: "RSSI - Responsable de la Sécurité des Systèmes d'Information",
+    title: "Cybersecurity Engineer",
     organization: "Voltaire Group",
     period: "sept. 2024 - aujourd'hui",
     location: "Bidart, Nouvelle-Aquitaine",
