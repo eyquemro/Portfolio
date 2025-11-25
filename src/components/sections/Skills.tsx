@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { FaCode,   FaNetworkWired, FaShieldHalved, FaChartLine } from 'react-icons/fa6'
-import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn } from 'react-icons/si'
+import { FaCode,   FaNetworkWired, FaShieldHalved } from 'react-icons/fa6'
+import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn ,SiVirustotal} from 'react-icons/si'
 import { MdOutlineWebAsset ,MdHive } from 'react-icons/md'
 import { GiBrickWall } from "react-icons/gi";
 
@@ -15,7 +15,7 @@ const skillCategories = [
       { name: "TheHive", icon: MdHive  },
       { name: "Splunk", icon: SiSplunk },
       { name: "Elastic", icon: SiElastic },
-      { name: "QRadar", icon: FaChartLine },
+      { name: "VirusTotal", icon: SiVirustotal  },
     ],
   },
   {
