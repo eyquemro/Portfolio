@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaCode, FaServer,  FaLock,  FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
+import { FaCode,   FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
 import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn } from 'react-icons/si'
 import { MdOutlineWebAsset } from 'react-icons/md'
 import { GiBrickWall } from "react-icons/gi";
