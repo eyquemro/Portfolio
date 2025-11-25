@@ -9,8 +9,9 @@ const skillCategories = [
     title: "Cybersécurité Défensive",
     description: "SOC & Blue Team",
     skills: [
-      { name: "Fortinet", icon: SiFortinet },
       { name: "Wazuh", icon: FaShieldHalved },
+      { name: "Fortinet", icon: SiFortinet },
+   
       { name: "TheHive", icon: FaDiamond },
       { name: "Splunk", icon: SiSplunk },
       { name: "Elastic", icon: SiElastic },
