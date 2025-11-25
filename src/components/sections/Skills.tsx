@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion'
-import { FaCode, FaServer,  FaLock, FaBug, FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
-import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic, SiGraylog } from 'react-icons/si'
+import { FaCode, FaServer,  FaLock,  FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
+import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn } from 'react-icons/si'
+import { MdOutlineWebAsset } from 'react-icons/md'
+import { GiBrickWall } from "react-icons/gi";
 
 const skillCategories = [
   {
     title: "Cybersécurité Défensive",
     description: "SOC & Blue Team",
     skills: [
+      { name: "Fortinet", icon: SiFortinet },
       { name: "Wazuh", icon: FaShieldHalved },
-      { name: "QRadar SIEM", icon: FaChartLine },
       { name: "TheHive", icon: FaDiamond },
       { name: "Splunk", icon: SiSplunk },
       { name: "Elastic", icon: SiElastic },
-      { name: "Graylog", icon: SiGraylog },
+      { name: "QRadar", icon: FaChartLine },
     ],
   },
   {
@@ -21,7 +23,7 @@ const skillCategories = [
     skills: [
       { name: "Kali Linux", icon: SiKalilinux },
       { name: "Wireshark", icon: SiWireshark },
-      { name: "Pentest Web", icon: FaBug },
+      { name: "Pentest Web", icon: MdOutlineWebAsset  },
       { name: "Network Scan", icon: FaNetworkWired },
       { name: "Reverse Shell", icon: SiGnubash },
       { name: "Exploit Dev", icon: FaCode },
@@ -33,9 +35,9 @@ const skillCategories = [
     skills: [
       { name: "Linux", icon: SiLinux },
       { name: "Windows Server", icon: SiWindows },
-      { name: "Active Directory", icon: FaServer },
-      { name: "Firewall", icon: FaLock },
-      { name: "VPN", icon: FaShieldHalved },
+      { name: "Active Directory", icon: SiWindows },
+      { name: "Firewall", icon: GiBrickWall  },
+      { name: "Open VPN", icon: SiOpenvpn  },
       { name: "IDS/IPS", icon: FaNetworkWired },
     ],
   },
