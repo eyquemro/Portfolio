@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaHackerrank, FaAward } from 'react-icons/fa6'
+import { FaGithub, FaLinkedin,  FaAward } from 'react-icons/fa6'
+import { SiRootme, SiTryhackme  } from "react-icons/si";
 
 export function Hero() {
   return (
@@ -45,7 +46,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="cyber-button"
               >
-                <FaHackerrank className="w-5 h-5" />
+                <SiRootme  className="w-5 h-5" />
                 <span>Root-Me</span>
               </a>
               <a
@@ -54,7 +55,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="cyber-button"
               >
-                <FaAward className="w-5 h-5" />
+                <SiTryhackme  className="w-5 h-5" />
                 <span>TryHackMe</span>
               </a>
             </div>

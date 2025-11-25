@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FaAward, FaShieldHalved } from 'react-icons/fa6'
 import { RootMeStats } from '../RootMeStats'
+import { SiRootme, SiTryhackme } from 'react-icons/si'
 
 const certifications = [
   {
@@ -34,12 +35,14 @@ const platforms = [
     name: "Root-Me",
     description: "Plateforme de challenges en cybersécurité",
     link: "https://www.root-me.org/eyquemro",
-    component: RootMeStats
+    component: RootMeStats,
+    icon: SiRootme
   },
   {
     name: "TryHackMe",
     description: "Formation pratique en cybersécurité",
     link: "https://tryhackme.com/p/eyqueumro",
+    icon: SiTryhackme,
     stats: [
       { label: "Rang", value: "Top 1%" },
       { label: "Titre", value: "LEGEND" },
@@ -113,41 +116,44 @@ export function Certifications() {
             </motion.h3>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {platforms.map((platform, index) => (
-                <motion.div
-                  key={platform.name}
-                  className="cyber-card group hover:border-primary/50 transition-colors"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <FaAward className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
-                    <div>
-                      <h4 className="text-xl font-bold">{platform.name}</h4>
-                      <p className="text-sm text-muted-foreground">{platform.description}</p>
+              {platforms.map((platform, index) => {
+                const Icon = platform.icon ?? FaAward
+                return (
+                  <motion.div
+                    key={platform.name}
+                    className="cyber-card group hover:border-primary/50 transition-colors"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <Icon className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
+                      <div>
+                        <h4 className="text-xl font-bold">{platform.name}</h4>
+                        <p className="text-sm text-muted-foreground">{platform.description}</p>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {platform.component ? (
-                    <platform.component username="eyquemro" />
-                  ) : platform.stats && (
-                    <div className="grid grid-cols-3 gap-4">
-                      {platform.stats.map((stat) => (
-                        <div key={stat.label} className="bg-muted/30 p-3 rounded-lg text-center">
-                          <div className="text-lg font-bold text-primary">{stat.value}</div>
-                          <div className="text-xs text-muted-foreground">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              ))}
+                    
+                    {platform.component ? (
+                      <platform.component username="eyquemro" />
+                    ) : platform.stats && (
+                      <div className="grid grid-cols-3 gap-4">
+                        {platform.stats.map((stat) => (
+                          <div key={stat.label} className="bg-muted/30 p-3 rounded-lg text-center">
+                            <div className="text-lg font-bold text-primary">{stat.value}</div>
+                            <div className="text-xs text-muted-foreground">{stat.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>
       </div>
     </section>
   )
-} 
+}
