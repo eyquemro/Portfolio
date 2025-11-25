@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { FaCode,   FaNetworkWired, FaShieldHalved, FaChartLine, FaDiamond } from 'react-icons/fa6'
+import { FaCode,   FaNetworkWired, FaShieldHalved, FaChartLine } from 'react-icons/fa6'
 import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn } from 'react-icons/si'
-import { MdOutlineWebAsset } from 'react-icons/md'
+import { MdOutlineWebAsset ,MdHive } from 'react-icons/md'
 import { GiBrickWall } from "react-icons/gi";
 
 const skillCategories = [
@@ -12,7 +12,7 @@ const skillCategories = [
       { name: "Wazuh", icon: FaShieldHalved },
       { name: "Fortinet", icon: SiFortinet },
    
-      { name: "TheHive", icon: FaDiamond },
+      { name: "TheHive", icon: MdHive  },
       { name: "Splunk", icon: SiSplunk },
       { name: "Elastic", icon: SiElastic },
       { name: "QRadar", icon: FaChartLine },
