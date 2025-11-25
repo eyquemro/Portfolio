@@ -4,22 +4,7 @@ import { RootMeStats } from '../RootMeStats'
 import { SiRootme, SiTryhackme } from 'react-icons/si'
 
 const certifications = [
-  {
-    name: "CEH",
-    title: "Certified Ethical Hacker",
-    organization: "EC-Council",
-    status: "En cours",
-    description: "Certification axée sur les techniques de tests d'intrusion : reconnaissance, exploitation, post‑exploitation et méthodologies d'évaluation.",
-    icon: FaShieldHalved
-  },
-  {
-    name: "NSE 2",
-    title: "Fortinet NSE 2 — Fundamentals in Cybersecurity",
-    organization: "Fortinet",
-    status: "Validée",
-    description: "Introduction aux concepts fondamentaux de la cybersécurité : types de menaces, principes de sécurité réseau et bonnes pratiques.",
-    icon: FaAward
-  },
+
   {
     name: "NSE 3",
     title: "Fortinet NSE 3 — Certified Associate",
@@ -27,7 +12,24 @@ const certifications = [
     status: "Validée",
     description: "Connaissances sur l'architecture et les contrôles des solutions Fortinet, ainsi que leur mise en œuvre pour protéger les environnements réseau.",
     icon: FaAward
+  },
+  {
+    name: "NSE 1",
+    title: "Fortinet NSE 1 — Fundamentals in Cybersecurity",
+    organization: "Fortinet",
+    status: "Validée",
+    description: "Introduction aux concepts fondamentaux de la cybersécurité : types de menaces, principes de sécurité réseau et bonnes pratiques.",
+    icon: FaAward
+  },
+  {
+    name: "CEH",
+    title: "Certified Ethical Hacker",
+    organization: "EC-Council",
+    status: "En cours",
+    description: "Certification axée sur les techniques de tests d'intrusion : reconnaissance, exploitation, post‑exploitation et méthodologies d'évaluation.",
+    icon: FaShieldHalved
   }
+
 ]
 
 const platforms = [
