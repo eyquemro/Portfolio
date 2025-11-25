@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin,  FaAward } from 'react-icons/fa6'
+import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { SiRootme, SiTryhackme  } from "react-icons/si";
 
 export function Hero() {
