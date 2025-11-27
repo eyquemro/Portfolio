@@ -14,8 +14,8 @@ const certifications = [
     icon: FaAward
   },
   {
-    name: "NSE 1",
-    title: "Fortinet NSE 1 — Fundamentals in Cybersecurity",
+    name: "NSE 1 & 2",
+    title: "Fortinet NSE 1 & 2 — Fundamentals in Cybersecurity",
     organization: "Fortinet",
     status: "Validée",
     description: "Introduction aux concepts fondamentaux de la cybersécurité : types de menaces, principes de sécurité réseau et bonnes pratiques.",
