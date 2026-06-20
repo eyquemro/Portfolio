@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
-// import { Home } from './pages/Home'
+import { AnimatePresence } from 'framer-motion'
+import { MatrixRain } from './components/MatrixRain'
+import { KonamiEgg } from './components/KonamiEgg'
+import { FakeTerminal } from './components/FakeTerminal'
 import { Hero } from './components/sections/Hero'
 import { Experience } from './components/sections/Experience'
 import { Skills } from './components/sections/Skills'
@@ -10,6 +13,20 @@ import { Contact } from './components/sections/Contact'
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [logoClicks, setLogoClicks] = useState(0)
+  const [showTerminal, setShowTerminal] = useState(false)
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const next = logoClicks + 1
+    if (next >= 5) {
+      setShowTerminal(true)
+      setLogoClicks(0)
+    } else {
+      setLogoClicks(next)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   // Gestion du scroll et de la section active
   useEffect(() => {
@@ -32,14 +49,6 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Fonction pour le défilement fluide
-  const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault()
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
 
   const navigationItems = [
     { id: 'competences', label: 'Compétences' },
@@ -50,11 +59,16 @@ export default function App() {
 
   return (
     <div className="relative">
+      <MatrixRain />
+      <KonamiEgg />
+      <AnimatePresence>
+        {showTerminal && <FakeTerminal onClose={() => setShowTerminal(false)} />}
+      </AnimatePresence>
       {/* Navigation fixe */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
         <div className="container">
           <div className="flex items-center justify-between h-16">
-            <a href="#hero" onClick={scrollToTop} className="text-xl font-bold cyber-text interactive-element">
+            <a href="#hero" onClick={handleLogoClick} className="text-xl font-bold cyber-text interactive-element">
               RE
             </a>
             

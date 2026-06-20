@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { SiRootme, SiTryhackme  } from "react-icons/si";
+import { SiRootme, SiTryhackme  } from "react-icons/si"
+import { GlitchPhoto } from '../GlitchPhoto'
 
 export function Hero() {
   return (
@@ -16,10 +17,10 @@ export function Hero() {
               Romain Eyquem
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Expert en Cybersécurité
+              Architecte en Cybersécurité
             </p>
             <p className="text-muted-foreground mb-8 max-w-lg">
-              Spécialisé en sécurité offensive et défensive, avec une expertise particulière en analyse forensique et réponse aux incidents.
+              Conception et déploiement d'architectures de sécurité en environnements critiques — SOC, SIEM, IAM, segmentation réseau. Expertise en sécurité offensive et défensive, investigation numérique et conformité ANSSI.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -79,13 +80,10 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <img
+                <GlitchPhoto
                   src="/profil.jpg"
                   alt="Photo de profil"
-                  width={400}
-                  height={400}
-                  className="rounded-full w-full h-full object-cover"
-                  loading="eager"
+                  className="rounded-full w-full h-full"
                 />
               </motion.div>
             </div>

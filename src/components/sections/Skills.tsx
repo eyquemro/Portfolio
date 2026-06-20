@@ -1,33 +1,32 @@
 import { motion } from 'framer-motion'
-import { FaCode,   FaNetworkWired, FaShieldHalved } from 'react-icons/fa6'
-import { SiKalilinux, SiWireshark, SiPython, SiDocker, SiKubernetes, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiSplunk, SiGnubash, SiElastic,  SiFortinet ,SiOpenvpn ,SiVirustotal} from 'react-icons/si'
-import { MdOutlineWebAsset ,MdHive } from 'react-icons/md'
-import { GiBrickWall } from "react-icons/gi";
+import { FaCode, FaNetworkWired, FaShieldHalved, FaKey, FaMagnifyingGlass, FaServer } from 'react-icons/fa6'
+import { SiKalilinux, SiWireshark, SiDocker, SiGooglecloud, SiAmazonaws, SiLinux, SiWindows, SiGnubash, SiFortinet, SiOpenvpn, SiAnsible, SiTerraform, SiProxmox, SiRedhat } from 'react-icons/si'
+import { MdOutlineWebAsset, MdHive } from 'react-icons/md'
+import { GiBrickWall } from "react-icons/gi"
 
 const skillCategories = [
   {
     title: "Cybersécurité Défensive",
-    description: "SOC & Blue Team",
+    description: "SOC & Équipe Bleue",
     skills: [
       { name: "Wazuh", icon: FaShieldHalved },
       { name: "Fortinet", icon: SiFortinet },
-   
-      { name: "TheHive", icon: MdHive  },
-      { name: "Splunk", icon: SiSplunk },
-      { name: "Elastic", icon: SiElastic },
-      { name: "VirusTotal", icon: SiVirustotal  },
+      { name: "TheHive", icon: MdHive },
+      { name: "Suricata", icon: FaNetworkWired },
+      { name: "Stormshield", icon: GiBrickWall },
+      { name: "OpenVAS", icon: FaMagnifyingGlass },
     ],
   },
   {
     title: "Cybersécurité Offensive",
-    description: "Pentest & Red Team",
+    description: "Test d'Intrusion & Équipe Rouge",
     skills: [
       { name: "Kali Linux", icon: SiKalilinux },
       { name: "Wireshark", icon: SiWireshark },
-      { name: "Pentest Web", icon: MdOutlineWebAsset  },
-      { name: "Network Scan", icon: FaNetworkWired },
-      { name: "Reverse Shell", icon: SiGnubash },
-      { name: "Exploit Dev", icon: FaCode },
+      { name: "Burp Suite", icon: MdOutlineWebAsset },
+      { name: "Nmap", icon: FaNetworkWired },
+      { name: "Metasploit", icon: FaCode },
+      { name: "SQLMap", icon: SiGnubash },
     ],
   },
   {
@@ -36,10 +35,10 @@ const skillCategories = [
     skills: [
       { name: "Linux", icon: SiLinux },
       { name: "Windows Server", icon: SiWindows },
-      { name: "Active Directory", icon: SiWindows },
-      { name: "Firewall", icon: GiBrickWall  },
-      { name: "Open VPN", icon: SiOpenvpn  },
-      { name: "IDS/IPS", icon: FaNetworkWired },
+      { name: "Active Directory", icon: FaServer },
+      { name: "OpenVPN", icon: SiOpenvpn },
+      { name: "FreeIPA", icon: FaKey },
+      { name: "RHEL", icon: SiRedhat },
     ],
   },
   {
@@ -47,11 +46,11 @@ const skillCategories = [
     description: "Infrastructure & Automatisation",
     skills: [
       { name: "AWS", icon: SiAmazonaws },
-      { name: "GCP", icon: SiGooglecloud },
       { name: "Docker", icon: SiDocker },
-      { name: "Kubernetes", icon: SiKubernetes },
-      { name: "Python", icon: SiPython },
-      { name: "CI/CD", icon: FaCode },
+      { name: "Proxmox", icon: SiProxmox },
+      { name: "Ansible", icon: SiAnsible },
+      { name: "Terraform", icon: SiTerraform },
+      { name: "GCP", icon: SiGooglecloud },
     ],
   }
 ]
@@ -60,7 +59,7 @@ export function Skills() {
   return (
     <section id="competences" className="relative">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,10 +81,10 @@ export function Skills() {
             >
               <h3 className="text-xl font-bold mb-2 text-gradient">{category.title}</h3>
               <p className="text-sm text-muted-foreground mb-6">{category.description}</p>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {category.skills.map((skill) => (
-                  <div 
+                  <div
                     key={skill.name}
                     className="p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors group"
                   >
@@ -100,4 +99,4 @@ export function Skills() {
       </div>
     </section>
   )
-} 
+}

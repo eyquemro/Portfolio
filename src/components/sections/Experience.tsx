@@ -24,7 +24,7 @@ const educationExperiences: Experience[] = [
     organizationLink: "https://www.utt.fr/formations/mastere-specialise/expert-en-cybersecurite",
     period: "2023 - 2024",
     description: "Formation spécialisée en investigation numérique et réponse aux incidents de sécurité. Expertise en analyse forensique, threat hunting, et gestion des incidents de sécurité. Programme accrédité par la CGE avec un taux d'insertion de 100% à 6 mois.",
-    tags: ["Digital Forensics", "Incident Response", "Threat Hunting", "Malware Analysis", "OSINT", "Pentest"]
+    tags: ["Investigation Numérique", "Réponse aux Incidents", "Chasse aux Menaces", "Analyse de Malwares", "OSINT", "Pentest"]
   },
   {
     type: 'education',
@@ -42,7 +42,23 @@ const workExperiences: Experience[] = [
   {
     type: 'work',
     icon: FaBriefcase,
-    title: "Cybersecurity Engineer",
+    title: "Ingénieur Cybersécurité",
+    organization: "Ekium",
+    period: "janv. 2026 - aujourd'hui",
+    location: "Bordeaux, Nouvelle-Aquitaine",
+    tasks: [
+      "Pilotage de la conception et du déploiement d'un SOC en environnement air-gapped",
+      "Architecture réseau sécurisée : segmentation VLAN, pare-feu Stormshield HA et authentification centralisée",
+      "Automatisation de l'infrastructure via Ansible et Terraform sur cluster Proxmox",
+      "Gestion des identités (FreeIPA), veille CVE et détection d'intrusions réseau (Suricata, Wazuh)",
+      "Durcissement des systèmes conformément aux référentiels ANSSI"
+    ],
+    tags: ["SOC", "Wazuh", "SIEM", "FreeIPA", "Ansible", "Terraform", "Proxmox", "Stormshield", "Suricata", "RHEL", "Air-Gapped", "ANSSI", "OpenVAS"]
+  },
+  {
+    type: 'work',
+    icon: FaBriefcase,
+    title: "Ingénieur Cybersécurité",
     organization: "Voltaire Group",
     period: "sept. 2024 - aujourd'hui",
     location: "Bidart, Nouvelle-Aquitaine",
@@ -55,12 +71,12 @@ const workExperiences: Experience[] = [
       "Mise en place d'une politique de sécurité des systèmes d'information"
 
     ],
-    tags: ["Cybersécurité", "RGPD", "Risk Management", "Gouvernance", "Infrastructure Cloud", "Campagne de phishing", " Déploiement SIEM Wazuh"]
+    tags: ["Cybersécurité", "RGPD", "Gestion des Risques", "Gouvernance", "Infrastructure Cloud", "Campagne de Phishing", "Déploiement SIEM Wazuh"]
   },
   {
     type: 'work',
     icon: FaBriefcase,
-    title: "Software Engineer",
+    title: "Ingénieur Solutions Cloud",
     organization: "Amazon Web Services",
     period: "mars 2024 - sept. 2024",
     location: "Pessac, Nouvelle-Aquitaine",
@@ -74,7 +90,7 @@ const workExperiences: Experience[] = [
   {
     type: 'work',
     icon: FaBriefcase,
-    title: "Software Engineer",
+    title: "Ingénieur Développement Logiciel",
     organization: "Crédit Mutuel - Alliance Fédérale",
     period: "sept. 2020 - sept. 2023",
     location: "Fontenay-sous-Bois, Île-de-France",

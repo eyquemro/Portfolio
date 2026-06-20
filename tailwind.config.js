@@ -28,8 +28,8 @@ export default {
         border: "hsl(var(--border))",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['"JetBrains Mono"', 'monospace'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',

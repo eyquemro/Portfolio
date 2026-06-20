@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { FaAward, FaShieldHalved } from 'react-icons/fa6'
 import { RootMeStats } from '../RootMeStats'
 import { SiRootme, SiTryhackme } from 'react-icons/si'
@@ -7,18 +7,18 @@ const certifications = [
 
   {
     name: "NSE 3",
-    title: "Fortinet NSE 3 — Certified Associate",
+    title: "Fortinet NSE 3 â€” Certified Associate",
     organization: "Fortinet",
-    status: "Validée",
-    description: "Connaissances sur l'architecture et les contrôles des solutions Fortinet, ainsi que leur mise en œuvre pour protéger les environnements réseau.",
+    status: "ValidÃ©e",
+    description: "Connaissances sur l'architecture et les contrÃ´les des solutions Fortinet, ainsi que leur mise en Å“uvre pour protÃ©ger les environnements rÃ©seau.",
     icon: FaAward
   },
   {
     name: "NSE 1 & 2",
-    title: "Fortinet NSE 1 & 2 — Fundamentals in Cybersecurity",
+    title: "Fortinet NSE 1 & 2 â€” Fundamentals in Cybersecurity",
     organization: "Fortinet",
-    status: "Validée",
-    description: "Introduction aux concepts fondamentaux de la cybersécurité : types de menaces, principes de sécurité réseau et bonnes pratiques.",
+    status: "ValidÃ©e",
+    description: "Introduction aux concepts fondamentaux de la cybersÃ©curitÃ© : types de menaces, principes de sÃ©curitÃ© rÃ©seau et bonnes pratiques.",
     icon: FaAward
   },
   {
@@ -26,7 +26,7 @@ const certifications = [
     title: "Certified Ethical Hacker",
     organization: "EC-Council",
     status: "En cours",
-    description: "Certification axée sur les techniques de tests d'intrusion : reconnaissance, exploitation, post‑exploitation et méthodologies d'évaluation.",
+    description: "Certification axÃ©e sur les techniques de tests d'intrusion : reconnaissance, exploitation, postâ€‘exploitation et mÃ©thodologies d'Ã©valuation.",
     icon: FaShieldHalved
   }
 
@@ -35,20 +35,20 @@ const certifications = [
 const platforms = [
   {
     name: "Root-Me",
-    description: "Plateforme de challenges en cybersécurité",
+    description: "Plateforme de challenges en cybersÃ©curitÃ©",
     link: "https://www.root-me.org/eyquemro",
     component: RootMeStats,
     icon: SiRootme
   },
   {
     name: "TryHackMe",
-    description: "Formation pratique en cybersécurité",
+    description: "Formation pratique en cybersÃ©curitÃ©",
     link: "https://tryhackme.com/p/eyqueumro",
     icon: SiTryhackme,
     stats: [
       { label: "Rang", value: "Top 1%" },
       { label: "Titre", value: "LEGEND" },
-      { label: "Rooms", value: "150+" }
+      { label: "Challenges", value: "150+" }
     ]
   }
 ]
