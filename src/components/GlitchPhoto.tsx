@@ -112,6 +112,15 @@ export function GlitchPhoto({ src, alt, className }: Props) {
           75%  { clip-path: inset(30% 0 48% 0); transform: translate(-16px, 1px); }
           100% { clip-path: inset(48% 0 28% 0); transform: translate( 12px, 0);   }
         }
+        @keyframes gi-green {
+          0%   { clip-path: inset(8%  0 82% 0); transform: translate(  9px, -2px); }
+          17%  { clip-path: inset(45% 0 32% 0); transform: translate(-13px,  0);   }
+          33%  { clip-path: inset(68% 0 10% 0); transform: translate( 11px,  2px); }
+          50%  { clip-path: inset(18% 0 65% 0); transform: translate( -7px,  0);   }
+          67%  { clip-path: inset(85% 0 3%  0); transform: translate( 15px, -1px); }
+          83%  { clip-path: inset(32% 0 50% 0); transform: translate( -9px,  0);   }
+          100% { clip-path: inset(55% 0 22% 0); transform: translate( 12px,  1px); }
+        }
         @keyframes gi-white {
           0%   { clip-path: inset(20% 0 70% 0); transform: translate(-6px, 0); }
           50%  { clip-path: inset(60% 0 15% 0); transform: translate( 8px, 0); }
