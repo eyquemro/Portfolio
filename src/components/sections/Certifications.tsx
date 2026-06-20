@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FaAward, FaShieldHalved } from 'react-icons/fa6'
 import { RootMeStats } from '../RootMeStats'
 import { SiRootme, SiTryhackme } from 'react-icons/si'
@@ -7,18 +7,18 @@ const certifications = [
 
   {
     name: "NSE 3",
-    title: "Fortinet NSE 3 â€” Certified Associate",
+    title: "Fortinet NSE 3 — Certified Associate",
     organization: "Fortinet",
-    status: "ValidÃ©e",
-    description: "Connaissances sur l'architecture et les contrÃ´les des solutions Fortinet, ainsi que leur mise en Å“uvre pour protÃ©ger les environnements rÃ©seau.",
+    status: "Validée",
+    description: "Connaissances sur l'architecture et les contrôles des solutions Fortinet, ainsi que leur mise en œuvre pour protéger les environnements réseau.",
     icon: FaAward
   },
   {
     name: "NSE 1 & 2",
-    title: "Fortinet NSE 1 & 2 â€” Fundamentals in Cybersecurity",
+    title: "Fortinet NSE 1 & 2 — Fundamentals in Cybersecurity",
     organization: "Fortinet",
-    status: "ValidÃ©e",
-    description: "Introduction aux concepts fondamentaux de la cybersÃ©curitÃ© : types de menaces, principes de sÃ©curitÃ© rÃ©seau et bonnes pratiques.",
+    status: "Validée",
+    description: "Introduction aux concepts fondamentaux de la cybersécurité : types de menaces, principes de sécurité réseau et bonnes pratiques.",
     icon: FaAward
   },
   {
@@ -26,7 +26,7 @@ const certifications = [
     title: "Certified Ethical Hacker",
     organization: "EC-Council",
     status: "En cours",
-    description: "Certification axÃ©e sur les techniques de tests d'intrusion : reconnaissance, exploitation, postâ€‘exploitation et mÃ©thodologies d'Ã©valuation.",
+    description: "Certification axée sur les techniques de tests d'intrusion : reconnaissance, exploitation, post‑exploitation et méthodologies d'évaluation.",
     icon: FaShieldHalved
   }
 
@@ -35,14 +35,14 @@ const certifications = [
 const platforms = [
   {
     name: "Root-Me",
-    description: "Plateforme de challenges en cybersÃ©curitÃ©",
+    description: "Plateforme de challenges en cybersécurité",
     link: "https://www.root-me.org/eyquemro",
     component: RootMeStats,
     icon: SiRootme
   },
   {
     name: "TryHackMe",
-    description: "Formation pratique en cybersÃ©curitÃ©",
+    description: "Formation pratique en cybersécurité",
     link: "https://tryhackme.com/p/eyqueumro",
     icon: SiTryhackme,
     stats: [
@@ -57,7 +57,7 @@ export function Certifications() {
   return (
     <section id="certifications" className="relative py-20">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export function Certifications() {
 
         <div className="mt-12 grid grid-cols-1 gap-8">
           <div>
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-bold mb-8 text-gradient"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -107,7 +107,7 @@ export function Certifications() {
           </div>
 
           <div>
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-bold mb-8 text-gradient"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -136,9 +136,9 @@ export function Certifications() {
                         <p className="text-sm text-muted-foreground">{platform.description}</p>
                       </div>
                     </div>
-                    
+
                     {platform.component ? (
-                      <platform.component username="eyquemro" />
+                      <platform.component />
                     ) : platform.stats && (
                       <div className="grid grid-cols-3 gap-4">
                         {platform.stats.map((stat) => (

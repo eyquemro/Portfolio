@@ -1,9 +1,25 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { SiRootme, SiTryhackme  } from "react-icons/si"
 import { GlitchPhoto } from '../GlitchPhoto'
 
+const SUBTITLE = 'Architecte en Cybersécurité'
+
 export function Hero() {
+  const [typed, setTyped] = useState('')
+  const [done, setDone] = useState(false)
+
+  useEffect(() => {
+    let i = 0
+    const timer = setInterval(() => {
+      i++
+      setTyped(SUBTITLE.slice(0, i))
+      if (i >= SUBTITLE.length) { clearInterval(timer); setDone(true) }
+    }, 55)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="min-h-[80vh] flex items-center relative">
       <div className="container">
@@ -17,7 +33,12 @@ export function Hero() {
               Romain Eyquem
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Architecte en Cybersécurité
+              {typed}
+              <span style={{
+                opacity: done ? 0 : 1,
+                animation: done ? 'none' : 'blink 1s step-end infinite',
+                color: '#00ff41',
+              }}>_</span>
             </p>
             <p className="text-muted-foreground mb-8 max-w-lg">
               Conception et déploiement d'architectures de sécurité en environnements critiques — SOC, SIEM, IAM, segmentation réseau. Expertise en sécurité offensive et défensive, investigation numérique et conformité ANSSI.
@@ -63,29 +84,36 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="relative mx-auto"
           >
             <div className="w-64 h-64 md:w-80 md:h-80 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-2xl" />
-              <motion.div
-                className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+              <div className="absolute inset-0 rounded-full" style={{
+                boxShadow: '0 0 40px rgba(0,255,65,0.12)',
+              }} />
+              <div
+                className="relative w-full h-full rounded-full overflow-hidden"
+                style={{
+                  border: '1px solid rgba(0,255,65,0.4)',
+                  transition: 'border-color 0.3s, box-shadow 0.3s',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(0,255,65,0.8)'
+                  ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 0 20px rgba(0,255,65,0.25)'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(0,255,65,0.4)'
+                  ;(e.currentTarget as HTMLDivElement).style.boxShadow = 'none'
+                }}
               >
                 <GlitchPhoto
                   src="/profil.jpg"
                   alt="Photo de profil"
                   className="rounded-full w-full h-full"
                 />
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import { MatrixRain } from './components/MatrixRain'
 import { KonamiEgg } from './components/KonamiEgg'
 import { FakeTerminal } from './components/FakeTerminal'
+import { CustomCursor } from './components/CustomCursor'
 import { Hero } from './components/sections/Hero'
 import { Experience } from './components/sections/Experience'
 import { Skills } from './components/sections/Skills'
@@ -15,6 +16,30 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [logoClicks, setLogoClicks] = useState(0)
   const [showTerminal, setShowTerminal] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  useEffect(() => {
+    const ASCII = `
+ ██████╗ ███████╗
+ ██╔══██╗██╔════╝
+ ██████╔╝█████╗
+ ██╔══██╗██╔══╝
+ ██║  ██║███████╗
+ ╚═╝  ╚═╝╚══════╝`
+    console.log('%c' + ASCII, 'color:#00ff41;font-family:monospace;font-size:10px;line-height:1.4;text-shadow:0 0 8px #00ff41')
+    console.log('%c> Romain Eyquem — Architecte Cybersécurité', 'color:#00ff41;font-family:monospace;font-size:13px;font-weight:bold')
+    console.log('%c> Si tu lis ça, tu sais déjà utiliser F12.', 'color:#00cc33;font-family:monospace;font-size:12px')
+    console.log('%c> Contact disponible en bas de page.', 'color:#00882a;font-family:monospace;font-size:11px')
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight
+      setScrollProgress(total > 0 ? window.scrollY / total : 0)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -59,8 +84,19 @@ export default function App() {
 
   return (
     <div className="relative">
+      <CustomCursor />
       <MatrixRain />
       <KonamiEgg />
+      {/* Barre de progression scroll */}
+      <div style={{
+        position: 'fixed', top: 0, left: 0, zIndex: 200,
+        height: '2px',
+        width: `${scrollProgress * 100}%`,
+        background: '#00ff41',
+        boxShadow: '0 0 8px #00ff41',
+        transition: 'width 0.1s linear',
+        pointerEvents: 'none',
+      }} />
       <AnimatePresence>
         {showTerminal && <FakeTerminal onClose={() => setShowTerminal(false)} />}
       </AnimatePresence>

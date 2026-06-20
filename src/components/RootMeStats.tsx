@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react'
 
-interface RootMeStatsProps {
-  username: string
-}
-
 interface RootMeData {
   score?: number
   position?: number
   challenges_validates?: number
 }
 
-export function RootMeStats({ username }: RootMeStatsProps) {
+export function RootMeStats() {
   const [data, setData] = useState<RootMeData>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -18,32 +14,25 @@ export function RootMeStats({ username }: RootMeStatsProps) {
   useEffect(() => {
     const fetchRootMeStats = async () => {
       try {
-        const apiUrl = '/api/rootme'
-
-        const response = await fetch(apiUrl, {
+        const response = await fetch('/api/rootme', {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Cookie': 'api_key=886940_47052075a26422c0148aaa882b31974eb708ecad220b6347862430655ee94e3f'
           }
         })
 
         if (!response.ok) {
-          console.error('Status:', response.status)
-          console.error('Headers:', Object.fromEntries(response.headers.entries()))
-          throw new Error(`Erreur lors de la récupération des données Root-Me (${response.status})`)
+          throw new Error(`Erreur API Root-Me (${response.status})`)
         }
 
-        const data = await response.json()
-        console.log('Data received:', data)
+        const json = await response.json()
         setData({
-          score: data.score,
-          position: data.position,
-          challenges_validates: data.validations?.length || 0
+          score: json.score,
+          position: json.position,
+          challenges_validates: json.validations?.length || 0
         })
       } catch (err) {
-        setError('Erreur de connexion à l\'API Root-Me')
+        setError('Données indisponibles')
         console.error('Erreur Root-Me:', err)
       } finally {
         setLoading(false)
@@ -51,43 +40,22 @@ export function RootMeStats({ username }: RootMeStatsProps) {
     }
 
     fetchRootMeStats()
-  }, [username])
+  }, [])
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-3 gap-4">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-muted/30 p-3 rounded-lg text-center animate-pulse">
-            <div className="h-6 bg-primary/20 rounded mb-1"></div>
-            <div className="h-4 bg-primary/10 rounded"></div>
-          </div>
-        ))}
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="text-sm text-red-500">
-        {error}
-      </div>
-    )
-  }
+  const stats = [
+    { label: 'Points',     value: loading ? '…' : error ? '—' : String(data.score ?? '—') },
+    { label: 'Classement', value: loading ? '…' : error ? '—' : `#${data.position ?? '—'}` },
+    { label: 'Challenges', value: loading ? '…' : error ? '—' : String(data.challenges_validates ?? '—') },
+  ]
 
   return (
     <div className="grid grid-cols-3 gap-4">
-      <div className="bg-muted/30 p-3 rounded-lg text-center">
-        <div className="text-lg font-bold text-primary">{data.score}</div>
-        <div className="text-xs text-muted-foreground">Points</div>
-      </div>
-      <div className="bg-muted/30 p-3 rounded-lg text-center">
-        <div className="text-lg font-bold text-primary">#{data.position}</div>
-        <div className="text-xs text-muted-foreground">Classement</div>
-      </div>
-      <div className="bg-muted/30 p-3 rounded-lg text-center">
-        <div className="text-lg font-bold text-primary">{data.challenges_validates}</div>
-        <div className="text-xs text-muted-foreground">Challenges</div>
-      </div>
+      {stats.map(s => (
+        <div key={s.label} className="bg-muted/30 p-3 rounded-lg text-center">
+          <div className="text-lg font-bold text-primary">{s.value}</div>
+          <div className="text-xs text-muted-foreground">{s.label}</div>
+        </div>
+      ))}
     </div>
   )
-} 
+}

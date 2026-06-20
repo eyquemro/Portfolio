@@ -133,7 +133,7 @@ function ExperienceTimeline({ experiences, title }: { experiences: Experience[],
       <div className="space-y-6 mb-12">
         {experiences.map((exp, index) => (
           <motion.div
-            key={exp.title}
+            key={`${exp.organization}-${exp.title}`}
             className="cyber-card group hover:border-primary/50 transition-colors"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
